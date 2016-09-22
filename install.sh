@@ -33,3 +33,13 @@ fi
 
 # Install my nvim config
 git clone https://github.com/derek-duncan/nvim.git $HOME/.config/nvim
+
+# Install mix
+echo "Installing mix..."
+mix local.hex
+
+# Install Phoenix
+echo "Installing Phoenix..."
+mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+
+echo "Done. Enjoy!"

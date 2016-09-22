@@ -13,6 +13,8 @@ brew 'neovim'
 # Install Binaries
 brew 'git'
 brew 'node'
+brew 'elixir'
+brew 'postgresql'
 
 # Apps
 cask 'appcleaner'
