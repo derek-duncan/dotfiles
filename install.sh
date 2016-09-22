@@ -14,8 +14,8 @@ brew update
 
 # Install all our dependencies with bundle (See Brewfile)
 echo "Installing Homebrew packages..."
-#brew tap homebrew/bundle
-#brew bundle
+brew tap homebrew/bundle
+brew bundle
 
 # Make ZSH the default shell environment
 echo "Setting ZSH as default shell..."
