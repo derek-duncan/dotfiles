@@ -8,13 +8,12 @@ brew 'zsh'
 brew 'zsh-completions'
 
 # Install Neovim
-brew 'neovim'
+brew 'neovim/neovim/neovim'
 
 # Install Binaries
+brew 'elixir'
 brew 'git'
 brew 'node'
-brew 'elixir'
-brew 'postgresql'
 
 # Apps
 cask 'appcleaner'
@@ -22,6 +21,7 @@ cask 'dropbox'
 cask 'flux'
 cask 'google-chrome'
 cask 'iterm2'
+cask 'postgres'
 cask 'rescuetime'
 cask 'sequel-pro'
 cask 'sizeup'
