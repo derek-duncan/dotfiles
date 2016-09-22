@@ -34,8 +34,8 @@ fi
 # Install my nvim config
 git clone https://github.com/derek-duncan/nvim.git $HOME/.config/nvim
 
-# Install mix
-echo "Installing mix..."
+# Install hex
+echo "Installing hex..."
 mix local.hex
 
 # Install Phoenix
