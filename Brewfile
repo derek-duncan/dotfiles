@@ -7,13 +7,16 @@ cask_args appdir: '/Applications'
 brew 'zsh'
 brew 'zsh-completions'
 
-# Install Neovim
-brew 'neovim/neovim/neovim'
-
 # Install Binaries
 brew 'elixir'
 brew 'git'
 brew 'node'
+
+# Development
+brew 'neovim/neovim/neovim'
+brew 'tmux'
+brew 'wemux'
+brew 'exercism'
 
 # Apps
 cask 'appcleaner'
