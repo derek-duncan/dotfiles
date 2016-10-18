@@ -13,6 +13,7 @@ brew 'git'
 brew 'node'
 
 # Development
+brew 'python3'
 brew 'neovim/neovim/neovim'
 brew 'tmux'
 brew 'wemux'

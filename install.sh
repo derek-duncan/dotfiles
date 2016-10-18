@@ -26,6 +26,9 @@ echo "Creating ~/code directory..."
 mkdir $HOME/code
 
 echo "Configuring Neovim..."
+# Installing python support for neovim
+pip3 install --user neovim
+
 # Check in ~/.config directory exists
 if [ ! -d $HOME/.config ]; then
 	mkdir $HOME/.config
