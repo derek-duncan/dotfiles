@@ -18,6 +18,7 @@ brew 'neovim/neovim/neovim'
 brew 'tmux'
 brew 'wemux'
 brew 'exercism'
+brew 'reattach-to-user-namespace'
 
 # Apps
 cask 'appcleaner'
