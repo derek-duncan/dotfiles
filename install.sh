@@ -45,4 +45,8 @@ mix local.hex
 echo "Installing Phoenix..."
 mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
 
+# Install NPM packages
+npm install -g eslint
+npm install -g flow-vim-quickfix
+
 echo "Done. Enjoy!"
