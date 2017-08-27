@@ -18,14 +18,16 @@ brew tap homebrew/bundle
 brew bundle
 
 # Make ZSH the default shell environment
-echo "Setting ZSH as default shell..."
+echo "Configuring ZSH..."
 chsh -s $(which zsh)
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+ln -s $(pwd)/.zshrc $HOME
+
 echo "Configuring yarn..."
-echo "workspaces-experimental true" >> ~/.zshrc
+echo "workspaces-experimental true" >> ~/.yarnrc
 
 # Create ~/code directory
 echo "Creating ~/code directory..."
@@ -42,6 +44,12 @@ fi
 
 # Install my nvim config
 git clone https://github.com/derek-duncan/nvim.git $HOME/.config/nvim
+
+echo "Configuring tmux..."
+ln -s $(pwd)/.tmux.conf $HOME
+
+echo "Configuring karabiner..."
+ln -s $(pwd)/karabiner.json $HOME/.config/karabiner
 
 # Install hex
 echo "Installing hex..."
