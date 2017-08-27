@@ -21,6 +21,12 @@ brew bundle
 echo "Setting ZSH as default shell..."
 chsh -s $(which zsh)
 
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo "Configuring yarn..."
+echo "workspaces-experimental true" >> ~/.zshrc
+
 # Create ~/code directory
 echo "Creating ~/code directory..."
 mkdir $HOME/code
@@ -45,8 +51,7 @@ mix local.hex
 echo "Installing Phoenix..."
 mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
 
-# Install NPM packages
-npm install -g eslint
-npm install -g flow-vim-quickfix
+echo "Downloading common fonts..."
+(cd $HOME && git clone https://github.com/ryanoasis/nerd-fonts)
 
 echo "Done. Enjoy!"
