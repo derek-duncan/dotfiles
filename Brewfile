@@ -22,6 +22,7 @@ brew 'tmux'
 cask 'xquartz'
 brew 'wine'
 brew 'yarn'
+brew 'watchman'
 cask 'devdocs'
 cask 'postgres'
 
