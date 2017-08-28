@@ -2,6 +2,9 @@
 
 echo "Setting up your Mac..."
 
+echo "Configuring iterm..."
+tic xterm-256color-italic.terminfo
+
 # Check for Homebrew and install if we don't have it
 echo "Installing Homebrew..."
 if [ ! $(which brew) ]; then
@@ -20,18 +23,17 @@ brew bundle
 # Make ZSH the default shell environment
 echo "Configuring ZSH..."
 chsh -s $(which zsh)
-
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-ln -s $(pwd)/.zshrc $HOME
+cp $(pwd)/.zshrc $HOME
 
 echo "Configuring yarn..."
-echo "workspaces-experimental true" >> ~/.yarnrc
+sudo yarn config set workspaces-experimental true
 
 # Create ~/code directory
 echo "Creating ~/code directory..."
 mkdir $HOME/code
+chmod 777 $HOME/code
 
 echo "Configuring Neovim..."
 # Installing python support for neovim
@@ -40,21 +42,22 @@ pip3 install --user neovim
 # Check in ~/.config directory exists
 if [ ! -d $HOME/.config ]; then
   mkdir $HOME/.config
+  sudo chmod -R 777 $HOME/.config
 fi
 
 # Install my nvim config
 git clone https://github.com/derek-duncan/nvim.git $HOME/.config/nvim
 
 echo "Configuring tmux..."
-ln -s $(pwd)/.tmux.conf $HOME
+cp $(pwd)/.tmux.conf $HOME
 
 echo "Configuring karabiner..."
 if [ ! -d $HOME/.config/karabiner ]; then
-  mkdir $HOME/.config/karabinder
+  ln -s $(pwd)/karabiner $HOME/.config
 fi
-ln -s $(pwd)/karabiner.json $HOME/.config/karabiner
 
-open https://github.com/tekezo/Karabiner-Elements
+# Open link to download karabiner beta
+open https://pqrs.org/latest/karabiner-elements-latest.dmg
 
 # Install hex
 echo "Installing hex..."
@@ -65,7 +68,7 @@ echo "Installing Phoenix..."
 mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
 
 echo "Downloading common fonts..."
-(cd $HOME && git clone https://github.com/ryanoasis/nerd-fonts)
+# (cd $HOME && git clone https://github.com/ryanoasis/nerd-fonts)
 
 echo "Configuring MacOS"
 defaults write com.apple.finder AppleShowAllFiles YES
