@@ -39,7 +39,7 @@ pip3 install --user neovim
 
 # Check in ~/.config directory exists
 if [ ! -d $HOME/.config ]; then
-	mkdir $HOME/.config
+  mkdir $HOME/.config
 fi
 
 # Install my nvim config
@@ -49,7 +49,12 @@ echo "Configuring tmux..."
 ln -s $(pwd)/.tmux.conf $HOME
 
 echo "Configuring karabiner..."
+if [ ! -d $HOME/.config/karabiner ]; then
+  mkdir $HOME/.config/karabinder
+fi
 ln -s $(pwd)/karabiner.json $HOME/.config/karabiner
+
+open https://github.com/tekezo/Karabiner-Elements
 
 # Install hex
 echo "Installing hex..."
@@ -61,5 +66,8 @@ mix archive.install https://github.com/phoenixframework/archives/raw/master/phoe
 
 echo "Downloading common fonts..."
 (cd $HOME && git clone https://github.com/ryanoasis/nerd-fonts)
+
+echo "Configuring MacOS"
+defaults write com.apple.finder AppleShowAllFiles YES
 
 echo "Done. Enjoy!"
