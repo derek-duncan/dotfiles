@@ -73,4 +73,7 @@ echo "Downloading common fonts..."
 echo "Configuring MacOS"
 defaults write com.apple.finder AppleShowAllFiles YES
 
+echo "Install some global packages..."
+yarn global add prettier
+
 echo "Done. Enjoy!"
